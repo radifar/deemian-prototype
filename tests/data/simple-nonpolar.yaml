@@ -1,0 +1,11 @@
+---
+load molecule:
+    zinc_finger: 1znm.pdb
+selection:
+    protein : protein in zinc_finger
+interaction:
+    measure: nonpolar on protein
+presentation:
+    granularity: atomic
+    field: [ atom_name, residue_name, chain, distance ]
+    output file: nonpolar_zinc_finger.txt
