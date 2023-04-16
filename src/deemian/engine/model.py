@@ -1,4 +1,4 @@
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, validator
 
 
 class Interaction(BaseModel):
@@ -13,6 +13,15 @@ class Presentation(BaseModel):
     granularity: str
     field: list
     output_file: str = Field(alias="output file")
+
+    @validator("field", pre=True)
+    def split_field(cls, field):
+        if isinstance(field, str):
+            field_list = field.split(",")
+            field_list = [field.strip() for field in field_list]
+            return field_list
+        elif isinstance(field, list):
+            return field
 
 
 class Specification(BaseModel):

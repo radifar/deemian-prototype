@@ -7,5 +7,5 @@ interaction:
     measure: nonpolar on protein
 presentation:
     granularity: atomic
-    field: [ atom_name, residue_name, chain, distance ]
+    field: atom_name, residue_name, chain, distance
     output file: nonpolar_zinc_finger.txt
