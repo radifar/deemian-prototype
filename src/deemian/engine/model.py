@@ -15,13 +15,13 @@ class Presentation(BaseModel):
     output_file: str = Field(alias="output file")
 
     @validator("field", pre=True)
-    def split_field(cls, field):
-        if isinstance(field, str):
-            field_list = field.split(",")
+    def split_field(cls, value):
+        if isinstance(value, str):
+            field_list = value.split(",")
             field_list = [field.strip() for field in field_list]
             return field_list
-        elif isinstance(field, list):
-            return field
+        elif isinstance(value, list):
+            return value
 
 
 class Specification(BaseModel):
