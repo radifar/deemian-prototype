@@ -1,6 +1,7 @@
 import pathlib
 
-import pytest, yaml
+import pytest
+import yaml
 
 
 @pytest.fixture
