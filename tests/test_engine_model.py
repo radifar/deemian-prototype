@@ -19,6 +19,15 @@ def test_presentation_model(simple_yaml_parsed):
     assert result.output_file == "nonpolar_zinc_finger.txt"
 
 
+def test_presentation_model_field_list(simple_yaml_parsed, monkeypatch):
+    presentation = simple_yaml_parsed["presentation"]
+    monkeypatch.setitem(presentation, "field", ["atom_name", "residue_name", "chain", "distance"])
+
+    result = model.Presentation.parse_obj(presentation)
+
+    assert result.field == ["atom_name", "residue_name", "chain", "distance"]
+
+
 def test_specification_model(simple_yaml_parsed):
     interaction = simple_yaml_parsed["interaction"]
     interaction_model = model.Interaction.parse_obj(interaction)
