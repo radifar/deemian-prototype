@@ -1,0 +1,16 @@
+start: selection | measurement
+
+selection: selection_string PREPOSITION IDENTIFIER
+measurement: interactions target
+interactions: INTERACTION("," INTERACTION)*
+target: PREPOSITION IDENTIFIER [PREPOSITION IDENTIFIER]
+
+selection_string: MACRO (LOGIC+ MACRO)*
+LOGIC: ("AND"|"OR"|"NOT")
+MACRO: ("protein"|"ligand"|"metal"|"water"|"nucleic_acid")
+INTERACTION: ("nonpolar"|"electrostatic"|"hydrogen_bond"|"pi")
+PREPOSITION: ("on"|"in"|"between"|"and")
+IDENTIFIER: /[a-z,_]+/
+
+WHITESPACE:(" " | "\n")+
+%ignore WHITESPACE
