@@ -1,7 +1,7 @@
 from deemian.engine import cfg
 
 
-def test_parser_protein():
+def test_parser_selection_protein():
     """
     >>> import rich
     >>> from deemian.engine.cfg import parser
