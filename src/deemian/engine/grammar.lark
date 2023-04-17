@@ -1,4 +1,4 @@
-start: selection | measurement
+?statement: selection | measurement
 
 selection: selection_string PREPOSITION IDENTIFIER
 measurement: interactions target
