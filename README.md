@@ -34,3 +34,9 @@ Interested in contributing? Check out the contributing guidelines. Please note t
 ## Credits
 
 `deemian` was created with [`cookiecutter`](https://cookiecutter.readthedocs.io/en/latest/) and the `py-pkgs-cookiecutter` [template](https://github.com/py-pkgs/py-pkgs-cookiecutter).
+
+The test data include the PDB data retrieved from RCSB.org under the
+[CC0 1.0 Universal (CC0 1.0) Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/) license.
+The PDBs being used are as follows
+
+- 1ZNM: Viles, John H., et al. "Design, synthesis and structure of a zinc finger with an artificial β-turn." Journal of molecular biology 279.4 (1998): 973-986. <https://doi.org/10.1006/jmbi.1998.1764>
