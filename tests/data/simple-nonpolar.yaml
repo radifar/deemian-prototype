@@ -1,6 +1,6 @@
 ---
 load molecule:
-    zinc_finger: 1znm.pdb
+    zinc_finger: tests/data/1znm.pdb
 selection:
     protein : protein in zinc_finger
 interaction:

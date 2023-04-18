@@ -35,7 +35,7 @@ def test_specification_model(simple_yaml_parsed):
     presentation = simple_yaml_parsed["presentation"]
     presentation_model = model.Presentation.parse_obj(presentation)
 
-    expected_molecule = {"zinc_finger": "1znm.pdb"}
+    expected_molecule = {"zinc_finger": "tests/data/1znm.pdb"}
     expected_selection = {"protein": "protein in zinc_finger"}
 
     result = model.Specification.parse_obj(simple_yaml_parsed)
