@@ -38,7 +38,7 @@ def test_specification_model(simple_yaml_parsed):
     expected_molecule = {"zinc_finger": "tests/data/1znm.pdb"}
     expected_selection = {"protein": "protein in zinc_finger"}
 
-    result = model.Specification.parse_obj(simple_yaml_parsed)
+    result = model.Workflow.parse_obj(simple_yaml_parsed)
 
     assert result.load_molecule == expected_molecule
     assert result.selection == expected_selection

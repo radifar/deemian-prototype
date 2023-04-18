@@ -2,13 +2,13 @@ from pydantic import BaseModel, Field, validator
 
 
 class Interaction(BaseModel):
-    """Contain the specification for interaction identification"""
+    """Contain the detail for interaction identification"""
 
     measure: str
 
 
 class Presentation(BaseModel):
-    """Contain the specification for presentation format and granularity"""
+    """Contain the detail for presentation format and granularity"""
 
     granularity: str
     field: list
@@ -24,8 +24,8 @@ class Presentation(BaseModel):
             return value
 
 
-class Specification(BaseModel):
-    """Contain the root specification"""
+class Workflow(BaseModel):
+    """Contain the root workflow"""
 
     load_molecule: dict = Field(alias="load molecule")
     selection: dict

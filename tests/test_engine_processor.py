@@ -4,7 +4,7 @@ from deemian.engine import model, processor
 
 
 def test_load_molecule_processor(simple_yaml_parsed):
-    specification = model.Specification.parse_obj(simple_yaml_parsed)
+    specification = model.Workflow.parse_obj(simple_yaml_parsed)
     molecules = specification.load_molecule
     molecule_id = [key for key in molecules.keys()][0]
 
