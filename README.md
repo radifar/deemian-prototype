@@ -39,4 +39,8 @@ The test data include the PDB data retrieved from RCSB.org under the
 [CC0 1.0 Universal (CC0 1.0) Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/) license.
 The PDBs being used are as follows
 
+<<<<<<< HEAD
 - [1ZNM](https://www.rcsb.org/structure/1znm): Viles, John H., et al. "Design, synthesis and structure of a zinc finger with an artificial β-turn." Journal of molecular biology 279.4 (1998): 973-986. <https://doi.org/10.1006/jmbi.1998.1764>
+=======
+- 1ZNM: Viles, John H., et al. "Design, synthesis and structure of a zinc finger with an artificial β-turn." Journal of molecular biology 279.4 (1998): 973-986. <https://doi.org/10.1006/jmbi.1998.1764>
+>>>>>>> 6d211e857a041d9fd5928a100b7c14786cb82f80
