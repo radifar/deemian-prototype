@@ -1,4 +1,5 @@
 from pydantic import BaseModel, Field, validator
+from rdkit import Chem
 
 
 class Interaction(BaseModel):
@@ -27,7 +28,14 @@ class Presentation(BaseModel):
 class Workflow(BaseModel):
     """Contain the root workflow"""
 
-    load_molecule: dict = Field(alias="load molecule")
+    load_molecule: dict[str, str | type[Chem.rdchem.Mol]] = Field(alias="load molecule")
     selection: dict
     interaction: Interaction
     presentation: Presentation
+
+    def molecule_loader(self):
+        for molecule in self.load_molecule.keys():
+            file_name = self.load_molecule[molecule]
+            rdkit_mol = Chem.MolFromPDBFile(file_name)
+
+            self.load_molecule.update({molecule: rdkit_mol})

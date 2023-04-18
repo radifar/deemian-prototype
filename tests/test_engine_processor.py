@@ -1,19 +1,18 @@
 from rdkit import Chem
 
-from deemian.engine import model, processor
+from deemian.engine import model
 
 
-def test_load_molecule_processor(simple_yaml_parsed):
-    specification = model.Workflow.parse_obj(simple_yaml_parsed)
-    molecules = specification.load_molecule
-    molecule_id = [key for key in molecules.keys()][0]
+def test_molecule_loader(simple_yaml_parsed):
+    workflow = model.Workflow.parse_obj(simple_yaml_parsed)
+    molecule_id = list(workflow.load_molecule.keys())[0]
 
-    loaded_molecules = processor.molecule_loader(molecules)
-    loaded_molecule = loaded_molecules[molecule_id]
-    get_atom_num = loaded_molecule.GetNumAtoms()
+    workflow.molecule_loader()
+    loaded_molecule = workflow.load_molecule[molecule_id]
+    atom_num = loaded_molecule.GetNumAtoms()
 
     assert isinstance(loaded_molecule, Chem.rdchem.Mol)
-    assert get_atom_num == 220
+    assert atom_num == 220
 
 
 def test_selection_processor():
