@@ -39,3 +39,27 @@ class Workflow(BaseModel):
             rdkit_mol = Chem.MolFromPDBFile(file_name)
 
             self.load_molecule.update({molecule: rdkit_mol})
+
+
+class InteractionPayload(BaseModel):
+    """Payload for interaction"""
+
+    measure: str
+
+
+class PresentationPayload(BaseModel):
+    """Payload for Presentation"""
+
+    present_result: str
+
+
+class WorkflowPayload(BaseModel):
+    """
+    Workflow and its payload are separated for traceability,
+    easier maintenance, and extendability
+    """
+
+    load_molecule: dict[str, type[Chem.rdchem.Mol]]
+    selection: dict
+    interaction: InteractionPayload
+    presentation: PresentationPayload
